@@ -24,6 +24,7 @@ Main="*res://global scripts/main.gd"
 
 [display]
 
+window/size/viewport_width=864
 window/vsync/vsync_mode=0
 
 [rendering]
