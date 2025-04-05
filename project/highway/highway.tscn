@@ -229,7 +229,8 @@ skeleton = NodePath("")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights/light_0"]
 transform = Transform3D(0.981697, -2.98023e-08, -0.190449, 0.190449, -0.00174539, 0.981695, -0.000332437, -0.999998, -0.00171343, 2.4593, 6.54325, -1.92502e-07)
-light_energy = 6.885
+light_color = Color(0.84895, 0.814244, 0.636547, 1)
+light_energy = 8.428
 spot_range = 16.1937
 spot_angle = 74.66
 
@@ -240,7 +241,8 @@ skeleton = NodePath("")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights/light_1"]
 transform = Transform3D(0.981697, -2.98023e-08, -0.190449, 0.190449, -0.00174539, 0.981695, -0.000332437, -0.999998, -0.00171343, 2.4593, 6.54325, -1.92502e-07)
-light_energy = 6.885
+light_color = Color(0.84895, 0.814244, 0.636547, 1)
+light_energy = 8.428
 spot_range = 15.0941
 spot_angle = 74.66
 
@@ -251,7 +253,8 @@ skeleton = NodePath("")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights/light_2"]
 transform = Transform3D(0.981697, -2.98023e-08, -0.190449, 0.190449, -0.00174539, 0.981695, -0.000332437, -0.999998, -0.00171343, 2.4593, 6.54325, -1.92502e-07)
-light_energy = 6.885
+light_color = Color(0.84895, 0.814244, 0.636547, 1)
+light_energy = 8.428
 spot_range = 14.4233
 spot_angle = 74.66
 

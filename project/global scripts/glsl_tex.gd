@@ -98,8 +98,7 @@ func glsl_write_to_texture(shader_path : String, resolution: int = 512, uniform_
 	RenderingDevice.RENDER_PRIMITIVE_TRIANGLES, r_state, RDPipelineMultisampleState.new(), d_state, c_blend)
 	
 	var clear_colors = PackedColorArray([Color(0., 0., 0., 0)])
-	var draw_list = rd.draw_list_begin(framebuffer, RenderingDevice.INITIAL_ACTION_CLEAR, \
-	RenderingDevice.FINAL_ACTION_STORE, RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_DISCARD, clear_colors)
+	var draw_list = rd.draw_list_begin(framebuffer, RenderingDevice.DRAW_CLEAR_COLOR_ALL, clear_colors)
 	
 	rd.draw_list_bind_vertex_array(draw_list, vertex_array_rid)
 	rd.draw_list_bind_uniform_set(draw_list, uniform_set_rid, 0)
