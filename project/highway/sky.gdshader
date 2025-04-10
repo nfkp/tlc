@@ -10,15 +10,15 @@ float snoise(in vec2 v) {
                         0.366025403784439,
                         -0.577350269189626,
                         0.024390243902439);
-    
+
     vec2 i  = floor(v + dot(v, C.yy) );
     vec2 x0 = v -   i + dot(i, C.xx);
-    
+
     vec2 i1;
     i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
     vec4 x12 = x0.xyxy + C.xxzz;
     x12.xy -= i1;
-    
+
     i = mod289(i);
     vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
     + i.x + vec3(0.0, i1.x, 1.0 ));
@@ -60,15 +60,15 @@ vec2 random2(vec2 p) {
 void sky() {
 	vec2 st = EYEDIR.xy;
 	vec3 color = vec3(0.);
-    
+
     st.x -= 0.5;
     st.y *= sqrt(1. - pow(st.y, 2.));
     st.x *= 6.28318530718;
-    
+
     st *= 15.;
     vec2 i = floor(st);
     vec2 f = fract(st);
-    
+
     float d = (random(i) - 0.5) * 5.;
     vec2 r = (random2(i) - .5) * d;
     f -= .5;
@@ -77,9 +77,9 @@ void sky() {
     pct += snoise(st) * 0.5 * 0.01;
 	color = vec3(pct);
     color += mix(vec3(0.410,0.413,0.630), vec3(0.700,0.664,0.576), pow(clamp(1. - st.y * 0.7, 0., 1.), 2.)) * 0.6;
-	
+
     COLOR =  color * clamp(sign(EYEDIR.y), 0., 1.);
-	
+
 	COLOR = pow(COLOR, vec3(2.2));
 	COLOR += vec3(0.00223, 0.00244, 0.01066) * clamp(-sign(EYEDIR.y), 0., 1.);
 }

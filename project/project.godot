@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 GlslTexture="*res://global scripts/glsl_tex.gd"
 Main="*res://global scripts/main.gd"
+SunVox="*res://global scripts/sv_test.gd"
 
 [display]
 

@@ -3,7 +3,6 @@ import os
 import sys
 
 env = SConscript("godot-cpp/SConstruct")
-
 # For reference:
 # - CCFLAGS are compilation flags shared between C and C++
 # - CFLAGS are for C-specific compilation flags
@@ -15,10 +14,12 @@ env = SConscript("godot-cpp/SConstruct")
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
+env.Append(LIBPATH=["libs/"])
+env.Append(LIBS=["User32"])
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
-        "project/bin/libgdexample.{}.{}.framework/libgdexample.{}.{}".format(
+        "project/bin/libsunvoxgd.{}.{}.framework/libgdexample.{}.{}".format(
             env["platform"], env["target"], env["platform"], env["target"]
         ),
         source=sources,
@@ -26,18 +27,17 @@ if env["platform"] == "macos":
 elif env["platform"] == "ios":
     if env["ios_simulator"]:
         library = env.StaticLibrary(
-            "project/bin/libgdexample.{}.{}.simulator.a".format(env["platform"], env["target"]),
+            "project/bin/libsunvoxgd.{}.{}.simulator.a".format(env["platform"], env["target"]),
             source=sources,
         )
     else:
         library = env.StaticLibrary(
-            "project/bin/libgdexample.{}.{}.a".format(env["platform"], env["target"]),
+            "project/bin/libsunvoxgd.{}.{}.a".format(env["platform"], env["target"]),
             source=sources,
         )
 else:
     library = env.SharedLibrary(
-        "project/bin/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        "project/bin/libsunvoxgd{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
     )
-
 Default(library)
