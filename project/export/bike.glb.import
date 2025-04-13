@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bw0cq0fevth3y"
-path="res://.godot/imported/boat.glb-fc65d11d2059a6d46422d026bdeec045.scn"
+uid="uid://dlmkw36oeeyo0"
+path="res://.godot/imported/bike.glb-1b26499b8c2ecd17e2c18e4e4f462b5a.scn"
 
 [deps]
 
-source_file="res://boat.glb"
-dest_files=["res://.godot/imported/boat.glb-fc65d11d2059a6d46422d026bdeec045.scn"]
+source_file="res://export/bike.glb"
+dest_files=["res://.godot/imported/bike.glb-1b26499b8c2ecd17e2c18e4e4f462b5a.scn"]
 
 [params]
 

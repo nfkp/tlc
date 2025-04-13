@@ -1,11 +1,18 @@
-[gd_scene load_steps=21 format=4 uid="uid://b0sl7nngdleva"]
+[gd_scene load_steps=25 format=4 uid="uid://b0sl7nngdleva"]
 
 [ext_resource type="Texture2D" uid="uid://b2hpaap2pcpgk" path="res://highway/meshes/highway_second_highway_tex.png" id="1_g5pt7"]
 [ext_resource type="Environment" uid="uid://bfr150hw5xj2v" path="res://highway/highway_env.tres" id="1_jl16g"]
 [ext_resource type="Texture2D" uid="uid://q423u1uhifwl" path="res://highway/meshes/highway_second_land_tex_3.png" id="2_lw2ao"]
 [ext_resource type="Texture2D" uid="uid://c3ykoqxv27avq" path="res://highway/meshes/highway_second_signboard.png" id="3_68u0b"]
-[ext_resource type="Texture2D" uid="uid://b7t51y2e4jubw" path="res://boat_boat1.png" id="6_7xddi"]
+[ext_resource type="ArrayMesh" uid="uid://b8n1vkydbvapo" path="res://player/bike/mesh/bike_Cube_001.res" id="6_clk32"]
+[ext_resource type="ArrayMesh" uid="uid://u7ushk50r8uh" path="res://player/bike/mesh/bike_Cube_002.res" id="7_niu3u"]
+[ext_resource type="ArrayMesh" uid="uid://c5fsnt45n5t2v" path="res://player/bike/mesh/bike_Cube_005.res" id="8_evtkc"]
 [ext_resource type="Material" uid="uid://bq5j1obi66kh5" path="res://highway/meshes/lamp_mat.tres" id="9_2onl5"]
+[ext_resource type="ArrayMesh" uid="uid://b1fkw5whnwr4d" path="res://player/bike/mesh/bike_Cylinder.res" id="9_ox3ue"]
+[ext_resource type="ArrayMesh" uid="uid://cbr8y2d5j5jv5" path="res://player/bike/mesh/bike_Plane.res" id="10_havgt"]
+[ext_resource type="ArrayMesh" uid="uid://xwvlkxnbs7qk" path="res://player/bike/mesh/bike_Cube.res" id="11_rgpv0"]
+[ext_resource type="ArrayMesh" uid="uid://bqubnjf8snkme" path="res://player/bike/mesh/bike_Cylinder_002.res" id="12_6dgnl"]
+[ext_resource type="ArrayMesh" uid="uid://bwi0sentyoagu" path="res://player/bike/mesh/bike_Cylinder_001.res" id="13_el3oj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnd5o"]
 resource_name = "Material"
@@ -128,44 +135,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_evtxu")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoe4y"]
-cull_mode = 2
-albedo_texture = ExtResource("6_7xddi")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_fj0fq"]
-_surfaces = [{
-"aabb": AABB(-0.925574, -0.0141922, -0.592768, 2.06292, 0.4959, 1.21746),
-"format": 34896613377,
-"index_count": 162,
-"index_data": PackedByteArray("AAADAAEAAAACAAMAAQAEAAAAAQAFAAQAAgAHAAMAAgAGAAcABwAJAAMABwALAAkAAQAKAAUAAQAIAAoAAwAIAAEAAwAJAAgACwANAAkACwAPAA0ACAAOAAoACAAMAA4ACQAMAAgACQANAAwACwATAA8ACwASABMABwASAAsABwARABIABgARAAcABgAQABEADgAWAAoADgAXABYACgAVAAUACgAWABUABQAUAAQABQAVABQAFAAaAAQAFAAdABoAAAAZAAIAAAAYABkAAgAbAAYAAgAZABsABAAYAAAABAAaABgABgAcABAABgAbABwAGgAZABgAGQAcABsAHAAaAB0AGQAaABwADwAfAA0ADwAhAB8ADQAeAAwADQAfAB4ADgAjABcADgAgACMADAAgAA4ADAAeACAAEwAhAA8AEwAiACEA"),
-"lods": [0.185353, PackedByteArray("BgAIABkAGQAbAAYABgAbABwABgAcABAABgAQABEABgARABIABgASAAsABgALAAgACwASABMACwATACEAEwAiACEACwAMAAgACwAhAAwAIQAfAAwADAAfAB4ADAAeACAACAAMAA4ADAAgAA4ADgAgACMADgAjABcADgAXABYACAAOABYAFgAVABQAGAAWABQAGAAIABYAGQAIABgAFAAaABgAFAAdABoAGgAZABgAGQAaABwAHAAaAB0AGQAcABsA"), 0.507278, PackedByteArray("EQAfABkAFAAZAB8AFAAdABkAHwAWABQAFgAVABQAEQAZABwAEQAcABAAEQAhAB8AEQATACEAEwAiACEAEQASABMAHwAXABYAHwAgABcAFwAgACMAHwAeACAAHAAZAB0A")],
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("WT5YB9eSAADIcJYIwpEAAFk+WAdyZgAAyHCWCLFnAABZPvYzLNcAAMhw3DKC0gAAWT5EOVwoAADIcOM33SwAAC2zAAAMjwAALbMAAM9qAAAts2sk1MYAAC2zwCghOAAAwN52TCqIAADA3nZMHXMAAPbdXGGRqAAA3t3ZY61VAABZPuHIAAAAAMhwgMeABAAALbNduMUPAACD2g3fejwAAFk+/sL//wAAyHDkwVT7AAAts3Ozpu8AAJ/aNdwOwgAAAABWeQyMAAAAAFZ5tG4AAAAA1JY3uQAAAABWmqpFAAAAAEP5/CoAAAAAX/Uy1AAA//9I1hOEAAD//0jWGngAAMr9Ed6BlgAAh/3+3ltnAAAt9P//BVkAAHr07/4BpQAA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_xe852"]
-resource_name = "boat_Plane"
-_surfaces = [{
-"aabb": AABB(-0.925574, -0.0141922, -0.592768, 2.06292, 0.4959, 1.21746),
-"attribute_data": PackedByteArray("VlEUmxF5V3S4ZXWvYYynh/cxtHtXW51WOIL2y2OnqKL2re5Bmb6SUlqUUyje1dZpBdMyI6/c3CyHw+8UgukQO8CUft7ruTC1ZehefHjyPkk5H/domkjfQ52BlRU6tdUL9COyzpcZfsNtMSvc3jlG4TcP9rmPBBmuREQC71RUD/2DUEL7g3BC8dQCk63UE5ODwu42C0H0thCU5HcEBvpRGlX5LCiu1g4FQfS2EPat7kH2re5B"),
-"format": 34896613399,
-"index_count": 162,
-"index_data": PackedByteArray("AAADAAEAAAACAAMAAQAEAAAAAQAFAAQAAgAHAAMAAgAGAAcABwAJAAMABwALAAkAAQAKAAUAAQAIAAoAAwAIAAEAAwAJAAgACwANAAkACwAPAA0ACAAOAAoACAAMAA4ACQAMAAgACQANAAwACwATAA8ACwASABMABwASAAsABwARABIABgARAAcABgAQABEADgAWAAoADgAXABYACgAVAAUACgAWABUABQAUAAQABQAVABQAFAAcAAQAFAAiABwAAAAaAAIAAAAYABoAAgAeAAYAAgAaAB4ABAAYAAAABAAcABgABgAgABAABgAeACAAHQAbABkAGwAhAB8AIQAdACMAGwAdACEADwAlAA0ADwAnACUADQAkAAwADQAlACQADgApABcADgAmACkADAAmAA4ADAAkACYAEwAnAA8AEwAoACcA"),
-"lods": [0.185353, PackedByteArray("BgArABoAGgAeAAYABgAeACAABgAgABAABgAQABEABgARABIABgASAAsABgALACsACwASABMACwATACcAEwAoACcACwAMACsACwAnAAwAJwAlAAwADAAlACQADAAkACYAKwAMAA4ADAAmAA4ADgAmACkADgApABcADgAXABYALAAOABYAFgAVABQAGAAWABQAGAAIABYAGgAIABgAFAAcABgAFAAiABwAHQAbABkAGwAdACEAIQAdACMAGwAhAB8A"), 0.507278, PackedByteArray("EQAlABoAFAAaACUAFAAiABoAJQAWABQAFgAVABQAEQAaACAAEQAgABAAEQAnACUAEQATACcAEwAoACcAEQASABMAKgAXABYAKgAmABcAFwAmACkAKgAkACYAIQAbACMA")],
-"material": SubResource("StandardMaterial3D_uoe4y"),
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 45,
-"vertex_data": PackedByteArray("WT5YB9eSATjIcJYIwpF3NVk+WAdyZlJCyHCWCLFnkz9ZPvYzLNfTJchw3DKC0mEiWT5EOVwoDFDIcOM33Sy7Sy2zAAAMj6YyLbMAAM9qWDwts2sk1Mb9Hi2zwCghOP9GwN52TCqICC3A3nZMHXOQNfbdXGGRqJAa3t3ZY61VDj9ZPuHIAAAlVMhwgMeABAlOLbNduMUPDEmD2g3fejyNQVk+/sL//wYZyHDkwVT7nhQts3Ozpu//D5/aNdwOwpoJAABWeQyMYDoAAFZ5DIy68gAAVnm0bmlEAABWebRuesgAANSWN7naKQAA1JY3uQHHAABWmqpF31IAAFaaqkUHxgAAQ/n8KnZYAABD+fwqs8YAAF/1MtSkHQAAX/Uy1BTG//9I1hOEcCr//0jWGnjDMsr9Ed6BlukVh/3+3ltnqDwt9P//BVnnP3r07/4BpSkE//9I1hp43R4tswAADI/mOi2zAAAMj0cbmNr/RrHhwEfZ2x9CmOP/QvjVy0kR3fJJBt2/McXnIjQp6V5JluvTRFrl1kv88lQ42fptT7399Er28wFQqPoJxa7fzSHr7EomrfoWLPrzrdZS0P9IddfBSCzgTUsR7DxPVdInR3sNQTmT0k9CVj9UIOjNckoNQ3ge+M+pMN5FEB100PEe5kMMHvTI8Em3RSQdGPv+shX4YbpB9oFOpfO8yW/xFdqo5pVKLPh+sAbqeknU66JL")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_fj0fq")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_f2nvn"]
 _surfaces = [{
 "aabb": AABB(-0.113673, -0.138984, -0.0953965, 2.76118, 6.99823, 0.210951),
@@ -202,6 +171,10 @@ shadow_mesh = SubResource("ArrayMesh_f2nvn")
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83018, 1.76123, -0.724221)
+fov = 55.0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_jl16g")
 
@@ -223,15 +196,6 @@ transform = Transform3D(0.910012, 0.0692342, -0.408758, 0.00281279, 0.984903, 0.
 fov = 31.0
 size = 5.42175
 far = 94.77
-
-[node name="boat" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.916, 0.945727, -16.2578)
-mesh = SubResource("ArrayMesh_xe852")
-skeleton = NodePath("")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83018, 1.76123, -0.724221)
-fov = 55.0
 
 [node name="lights" type="Node3D" parent="."]
 
@@ -270,3 +234,42 @@ light_color = Color(0.84895, 0.814244, 0.636547, 1)
 light_energy = 8.428
 spot_range = 14.4233
 spot_angle = 74.66
+
+[node name="player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.00049)
+
+[node name="body" type="MeshInstance3D" parent="player"]
+mesh = ExtResource("6_clk32")
+skeleton = NodePath("")
+
+[node name="back wheel" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368797, 0.598192)
+mesh = ExtResource("7_niu3u")
+skeleton = NodePath("")
+
+[node name="seat" type="MeshInstance3D" parent="player"]
+mesh = ExtResource("8_evtkc")
+skeleton = NodePath("")
+
+[node name="handle" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 0.907731, -0.419553, 0, 0.419553, 0.907731, 0, 0.943535, -0.280348)
+mesh = ExtResource("9_ox3ue")
+skeleton = NodePath("")
+
+[node name="Plane" type="MeshInstance3D" parent="player"]
+mesh = ExtResource("10_havgt")
+skeleton = NodePath("")
+
+[node name="pedals" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.289226, 0.104212)
+mesh = ExtResource("11_rgpv0")
+skeleton = NodePath("")
+
+[node name="front wheel" type="MeshInstance3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.367503, -0.622172)
+mesh = ExtResource("12_6dgnl")
+skeleton = NodePath("")
+
+[node name="Cylinder" type="MeshInstance3D" parent="player"]
+mesh = ExtResource("13_el3oj")
+skeleton = NodePath("")
