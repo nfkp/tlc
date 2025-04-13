@@ -93,5 +93,4 @@ SunVoxGD::SunVoxGD() {
 			sv_open_slot( 0 );
 		}
 	}
-	m_volume = 255;
 }

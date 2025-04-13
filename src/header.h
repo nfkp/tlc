@@ -15,7 +15,6 @@ protected:
 
 private:
 	void end_function();
-	int m_volume;
 
 public:
 	SunVoxGD();
