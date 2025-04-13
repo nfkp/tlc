@@ -19,12 +19,18 @@ private:
 
 public:
 	SunVoxGD();
-	~SunVoxGD();
 
 	void SV_load(String path);
+	void SV_lock_slot();
+	void SV_unlock_slot();
 	void SV_volume(const int level);
 	void SV_play();
 	void SV_stop();
+	void SV_pattern_mute(String name, int mute);
+	void SV_rewind(const int line_num);
+	void SV_pause();
+	void SV_resume();
+	void SV_play_from_beginning();
 };
 
 }

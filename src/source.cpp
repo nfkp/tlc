@@ -37,10 +37,17 @@ GDExtensionBool GDE_EXPORT example_library_init(GDExtensionInterfaceGetProcAddre
 }
 
 void SunVoxGD::_bind_methods() {
-	ClassDB::bind_method(D_METHOD("SV_load"), &SunVoxGD::SV_load);
-	ClassDB::bind_method(D_METHOD("SV_volume"), &SunVoxGD::SV_volume);
-	ClassDB::bind_method(D_METHOD("SV_play"), &SunVoxGD::SV_play);
-	ClassDB::bind_method(D_METHOD("SV_stop"), &SunVoxGD::SV_stop);
+	ClassDB::bind_method(D_METHOD("sv_load"), &SunVoxGD::SV_load);
+	ClassDB::bind_method(D_METHOD("sv_lock_slot"), &SunVoxGD::SV_lock_slot);
+	ClassDB::bind_method(D_METHOD("sv_unlock_slot"), &SunVoxGD::SV_unlock_slot);
+	ClassDB::bind_method(D_METHOD("sv_volume"), &SunVoxGD::SV_volume);
+	ClassDB::bind_method(D_METHOD("sv_play"), &SunVoxGD::SV_play);
+	ClassDB::bind_method(D_METHOD("sv_stop"), &SunVoxGD::SV_stop);
+	ClassDB::bind_method(D_METHOD("sv_pattern_mute"), &SunVoxGD::SV_pattern_mute);
+	ClassDB::bind_method(D_METHOD("sv_rewind"), &SunVoxGD::SV_rewind);
+	ClassDB::bind_method(D_METHOD("sv_pause"), &SunVoxGD::SV_pause);
+	ClassDB::bind_method(D_METHOD("sv_resume"), &SunVoxGD::SV_resume);
+	ClassDB::bind_method(D_METHOD("sv_play_from_beginning"), &SunVoxGD::SV_play_from_beginning);
 }
 
 void SunVoxGD::_notification(int p_what) {
@@ -56,21 +63,18 @@ void SunVoxGD::_notification(int p_what) {
 	}
 }
 
-void SunVoxGD::SV_load(String path) {
-	sv_load( 0, ProjectSettings::get_singleton()->globalize_path(path).utf8().get_data() );
-}
+void SunVoxGD::SV_load(String path) { sv_load( 0, ProjectSettings::get_singleton()->globalize_path(path).utf8().get_data() ); }
+void SunVoxGD::SV_lock_slot() { sv_lock_slot( 0 ); }
+void SunVoxGD::SV_unlock_slot() { sv_unlock_slot( 0 ); }
+void SunVoxGD::SV_volume(const int level) { sv_volume( 0, level ); }
+void SunVoxGD::SV_play() { sv_play( 0 ); }
+void SunVoxGD::SV_stop() { sv_stop( 0 ); }
+void SunVoxGD::SV_pattern_mute(String name, int mute) { sv_pattern_mute( 0, sv_find_pattern( 0, name.utf8().get_data() ), mute ); }
+void SunVoxGD::SV_rewind(const int line_num) { sv_rewind( 0, line_num ); }
+void SunVoxGD::SV_pause() { sv_pause( 0 ); }
+void SunVoxGD::SV_resume() { sv_resume( 0 ); }
+void SunVoxGD::SV_play_from_beginning() { sv_play_from_beginning( 0 ); }
 
-void SunVoxGD::SV_volume(const int level) {
-	sv_volume( 0, level );
-}
-
-void SunVoxGD::SV_play() {
-	sv_play( 0 );
-}
-
-void SunVoxGD::SV_stop() {
-	sv_stop( 0 );
-}
 
 void SunVoxGD::end_function() {	
 	sv_close_slot( 0 );
@@ -90,8 +94,4 @@ SunVoxGD::SunVoxGD() {
 		}
 	}
 	m_volume = 255;
-}
-
-SunVoxGD::~SunVoxGD() {
-	
 }

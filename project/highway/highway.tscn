@@ -93,7 +93,7 @@ shadow_mesh = SubResource("ArrayMesh_5tx7p")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wj7o5"]
 resource_name = "Material.002"
 cull_mode = 2
-shading_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("3_68u0b")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_evtxu"]
@@ -202,10 +202,6 @@ shadow_mesh = SubResource("ArrayMesh_f2nvn")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83018, 1.76123, -0.724221)
-fov = 55.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_jl16g")
 
@@ -223,15 +219,19 @@ mesh = SubResource("ArrayMesh_730sk")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="signboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.937105, 3.11865, 14.9393)
+transform = Transform3D(0.910012, 0.0692342, -0.408758, 0.00281279, 0.984903, 0.173082, 0.41457, -0.158657, 0.89608, -7.31991, 5.71653, 18.7722)
 fov = 31.0
 size = 5.42175
-far = 16.44
+far = 94.77
 
 [node name="boat" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.916, 0.945727, -16.2578)
 mesh = SubResource("ArrayMesh_xe852")
 skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83018, 1.76123, -0.724221)
+fov = 55.0
 
 [node name="lights" type="Node3D" parent="."]
 
