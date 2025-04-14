@@ -1,0 +1,21 @@
+BICYCLE
+wheel radius: 0.37[m]
+gear ratio: 0.364/0.348
+angle of rotation axis: 0.576[rad]
+location of back wheel: vec3(0., -0.59819, 0.3688)[m]
+
+REVOLUTION
+const float coef = 1. / (2. * PI * 0.37[m])
+vel_body * coef = vel_ang_wheel [rad/s]
+vel_ang_wheel * 0.364 = vel_ang_pedal [rad/s]
+
+STEERING
+sin(rot_steer) * delta * coef_steer = accel_side_steer [rad/s^2]
+
+	Front Wheel:
+	const mat2 rotation = rotate2D(0.576)
+	rotate2D(rot_steer) * rotation * v.yz = v.yz
+
+	Bicycle:
+	global_translate(loc_wheel_back)
+	global_rotate(Vector3(, 0., 0.))
