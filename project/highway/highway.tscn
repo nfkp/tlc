@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=4 uid="uid://b0sl7nngdleva"]
+[gd_scene load_steps=30 format=4 uid="uid://b0sl7nngdleva"]
 
 [ext_resource type="Texture2D" uid="uid://b2hpaap2pcpgk" path="res://highway/meshes/highway_second_highway_tex.png" id="1_g5pt7"]
 [ext_resource type="Environment" uid="uid://bfr150hw5xj2v" path="res://highway/highway_env.tres" id="1_jl16g"]
 [ext_resource type="Texture2D" uid="uid://q423u1uhifwl" path="res://highway/meshes/highway_second_land_tex_3.png" id="2_lw2ao"]
 [ext_resource type="Texture2D" uid="uid://c3ykoqxv27avq" path="res://highway/meshes/highway_second_signboard.png" id="3_68u0b"]
+[ext_resource type="Script" uid="uid://fmkar7iqjjy5" path="res://highway/bicycle.gd" id="5_niu3u"]
 [ext_resource type="ArrayMesh" uid="uid://b8n1vkydbvapo" path="res://player/bike/mesh/bike_Cube_001.res" id="6_clk32"]
 [ext_resource type="ArrayMesh" uid="uid://u7ushk50r8uh" path="res://player/bike/mesh/bike_Cube_002.res" id="7_niu3u"]
 [ext_resource type="ArrayMesh" uid="uid://c5fsnt45n5t2v" path="res://player/bike/mesh/bike_Cube_005.res" id="8_evtkc"]
@@ -246,6 +247,8 @@ spot_angle = 74.66
 [node name="bicycle" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27963, 0.503853, -3.93911)
 mass = 20.0
+center_of_mass_mode = 1
+script = ExtResource("5_niu3u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bicycle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003479, 0.787005, 0.0291367)
@@ -253,7 +256,6 @@ shape = SubResource("BoxShape3D_clk32")
 
 [node name="back wheel 3d" type="VehicleWheel3D" parent="bicycle"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.369, 0.598)
-engine_force = 1024.0
 use_as_traction = true
 wheel_radius = 0.37
 suspension_travel = 0.03
