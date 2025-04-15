@@ -8,6 +8,7 @@
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/project_settings.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/variant/builtin_types.hpp>
 
 using namespace godot;
 
@@ -122,10 +123,29 @@ SunVoxGD::SunVoxGD() {
 	}
 }
 
+//bicycle
+
 void Bicycle::_bind_methods() {
 
 }
 
 Bicycle::Bicycle() {
 
+}
+
+void Bicycle::_notification(int p_what) {
+	// Prevents this from running in the editor, only during game mode. In Godot 4.3+ use Runtime classes.
+	if (Engine::get_singleton()->is_editor_hint()) {
+		return;
+	}
+
+	switch (p_what) {
+	case NOTIFICATION_PROCESS: {
+		time += delta;
+	} break;
+	}
+}
+
+void Bicycle::_process(double p_delta) {
+	delta = p_delta;
 }
