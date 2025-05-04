@@ -1,0 +1,21 @@
+BICYCLE
+wheel radius: 0.37[m]
+gear ratio: 0.364/0.348
+angle of rotation axis: 0.576[rad]
+location of back wheel: vec3(0., -0.59819, 0.3688)[m]
+
+REVOLUTION
+const float coef = 1. / (2. * PI * 0.37[m])
+vel_body * coef = vel_ang_wheel [rad/s]
+vel_ang_wheel * 0.364 = vel_ang_pedal [rad/s]
+
+STEERING
+	Area3D ground surface has:
+		static and kinetic force of friction
+	
+
+CONTROLS
+W 		-> Pedal Forward
+A/D 	-> Turn
+S 		-> Put feet on ground
+SPACE 	-> brake

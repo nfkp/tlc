@@ -1,0 +1,20 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bfr150hw5xj2v"]
+
+[ext_resource type="Shader" uid="uid://bp7ppivy3y4i1" path="res://highway/sky.gdshader" id="1_8ffr2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ffr2"]
+shader = ExtResource("1_8ffr2")
+
+[sub_resource type="Sky" id="Sky_3c76v"]
+sky_material = SubResource("ShaderMaterial_8ffr2")
+
+[resource]
+background_mode = 2
+background_color = Color(0.0527514, 0.0620135, 0.0698124, 1)
+sky = SubResource("Sky_3c76v")
+ambient_light_source = 3
+glow_enabled = true
+glow_strength = 0.46
+glow_bloom = 0.44
+glow_blend_mode = 0
+volumetric_fog_density = 0.0697

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bovcmhn7ug8la"]
+
+[ext_resource type="Shader" uid="uid://coqjq2d6qfus7" path="res://player/bike/wheel.gdshader" id="1_efusd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_efusd")
