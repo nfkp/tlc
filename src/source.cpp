@@ -3,7 +3,6 @@
 #include "bicycle.h"
 #include "register_types.h"
 
-#include <stdio.h>
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
@@ -156,7 +155,6 @@ void SunVoxGD::_notification(int p_what) {
 void SunVoxGD::SV_load(String path) { 
 	String path_to = OS::get_singleton()->get_executable_path().get_base_dir() + "/music/" + path.get_file();
 	const char* file_path = path_to.utf8().get_data();
-	printf(file_path);
 	sv_load( 0, file_path ); 
 }
 void SunVoxGD::SV_lock_slot() { sv_lock_slot( 0 ); }
