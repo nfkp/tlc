@@ -23,12 +23,8 @@ public:
 void retrigger(double rate);
     double get_value();
     Trigger operator+(double const& obj);
-    Trigger operator+(Trigger const& obj);
     Trigger operator-(double const& obj);
-    Trigger operator-(Trigger const& obj);
     Trigger operator*(double const& obj);
-    Trigger operator*(Trigger const& obj);
     Trigger operator/(double const& obj);
-    Trigger operator/(Trigger const& obj);
 };
 #endif

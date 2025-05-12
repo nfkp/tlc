@@ -1,7 +1,0 @@
-res://highway/highway.tscn
-res://highway/sky.gdshader
-res://highway/highway_env.tres
-res://highway/meshes/lamp_mat.tres
-res://highway/meshes/road.gdshader
-res://screen.gdshader
-res://player/bike/handle.gdshader

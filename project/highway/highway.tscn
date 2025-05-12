@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b0sl7nngdleva"]
+[gd_scene load_steps=27 format=4 uid="uid://b0sl7nngdleva"]
 
 [ext_resource type="Texture2D" uid="uid://b2hpaap2pcpgk" path="res://highway/meshes/highway_second_highway_tex.png" id="1_g5pt7"]
 [ext_resource type="Environment" uid="uid://bfr150hw5xj2v" path="res://highway/highway_env.tres" id="1_jl16g"]
@@ -14,6 +14,7 @@
 [ext_resource type="ArrayMesh" uid="uid://xwvlkxnbs7qk" path="res://player/bike/mesh/bike_Cube.res" id="11_rgpv0"]
 [ext_resource type="ArrayMesh" uid="uid://bqubnjf8snkme" path="res://player/bike/mesh/bike_Cylinder_002.res" id="12_6dgnl"]
 [ext_resource type="ArrayMesh" uid="uid://bwi0sentyoagu" path="res://player/bike/mesh/bike_Cylinder_001.res" id="13_el3oj"]
+[ext_resource type="PackedScene" uid="uid://f06qnvq05gqc" path="res://glb/nel-lusso-blender.glb" id="15_evtkc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akaie"]
 resource_name = "Material.001"
@@ -287,5 +288,8 @@ max_value = 2.0
 step = 0.01
 tick_count = 21
 ticks_on_borders = true
+
+[node name="nel-lusso-blender" parent="." instance=ExtResource("15_evtkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.822535, 0, -3.85912)
 
 [connection signal="value_changed" from="HSlider" to="Bicycle" method="_on_h_slider_value_changed"]
