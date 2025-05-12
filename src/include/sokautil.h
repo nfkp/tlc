@@ -20,7 +20,7 @@ public:
     double value;
 	Trigger(double value, double precision);
     void retrigger();
-				void retrigger(double rate);
+void retrigger(double rate);
     double get_value();
     Trigger operator+(double const& obj);
     Trigger operator+(Trigger const& obj);
