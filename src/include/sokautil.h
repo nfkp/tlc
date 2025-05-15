@@ -8,23 +8,15 @@ private:
 
 public:
 	void increase_by(double value, double delta);
-	double get_velocity();
-	double get_distance();
+	double get_velocity() const;
+	double get_distance() const;
 };
 
-class Trigger {
+class SokaBoolTracker {
 private:
-    double m_precision;
-    bool m_bool;
+    bool last_frame = false;
 public:
-    double value;
-	Trigger(double value, double precision);
-    void retrigger();
-void retrigger(double rate);
-    double get_value();
-    Trigger operator+(double const& obj);
-    Trigger operator-(double const& obj);
-    Trigger operator*(double const& obj);
-    Trigger operator/(double const& obj);
+    bool just_happened(bool value);
 };
+
 #endif

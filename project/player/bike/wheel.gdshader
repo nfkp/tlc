@@ -1,14 +1,12 @@
 shader_type spatial;
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	float l = length(VERTEX);
+	const vec3 s = vec3(1.0, 3., 1.0) * 0.10;
+	VERTEX *= 1. - l * step(l, 0.625) * s;
 }
 
 void fragment() {
-	// Called for every pixel the material is visible on.
+	ALBEDO = vec3(0.07, 0.01, 0.01);
+	ROUGHNESS = 0.5;
 }
-
-//void light() {
-//	// Called for every pixel for every light affecting the material.
-//	// Uncomment to replace the default light processing function with this one.
-//}

@@ -1,0 +1,9 @@
+res://player/bike/mesh/wheel.tscn
+res://highway/sky.gdshader
+res://highway/highway_env.tres
+res://highway/meshes/lamp_mat.tres
+res://highway/meshes/road.gdshader
+res://screen.gdshader
+res://player/bike/handle.gdshader
+res://player/bike/wheel.gdshader
+res://highway/highway.tscn
